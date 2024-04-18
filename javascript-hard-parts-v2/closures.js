@@ -76,14 +76,14 @@ addByFour(5); // => should return 9
 
 // CHALLENGE 4
 function once(func) {
-	let output;
+  let counter = 0
+	let result;
   function callOnce(x) {    
-    if(output > 0){
-      return output;
-    } else {
-      output = func(x)
-      return output;
+    if(counter === 0){
+      counter++
+      result = func(x)
     }
+    return result;
   }
   return callOnce;
 }
